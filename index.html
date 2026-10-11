@@ -1,4 +1,3 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Christopher Ajibade</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap">
@@ -103,7 +102,8 @@ h1.hero-title em{font-style:italic;font-weight:500;color:var(--accent)}
 .btn-ghost:hover{border-color:var(--fg-faint)}
 
 /* ---------- section scaffolding ---------- */
-section{padding-block:88px;border-bottom:1px solid var(--line)}
+section{padding-block:88px;border-bottom:1px solid var(--line);position:relative;z-index:2;background:var(--bg)}
+.hero{z-index:2}
 .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:48px;flex-wrap:wrap}
 .sec-label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-faint);margin-bottom:10px}
 .sec-title{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(1.6rem,3vw,2.3rem);letter-spacing:-.01em}
@@ -113,7 +113,9 @@ section{padding-block:88px;border-bottom:1px solid var(--line)}
 
 /* ---------- work grid ---------- */
 .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);perspective:1200px}
-@media (max-width:760px){.work-grid{grid-template-columns:1fr}}
+.work-grid .card:nth-child(odd):last-child{grid-column:1 / -1}
+.work-grid .card:nth-child(odd):last-child .card-media{aspect-ratio:32/10}
+@media (max-width:760px){.work-grid{grid-template-columns:1fr}.work-grid .card:nth-child(odd):last-child .card-media{aspect-ratio:16/10}}
 .card{background:var(--bg);display:flex;flex-direction:column;transition:background .25s,transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;transform-style:preserve-3d;will-change:transform;position:relative}
 .card:hover{box-shadow:0 0 0 1px var(--accent-2-soft),0 24px 60px -24px rgba(95,251,230,.25)}
 .card::before,.card::after{content:"";position:absolute;width:14px;height:14px;border:1.5px solid var(--accent-2);opacity:0;transition:opacity .3s;z-index:3}
@@ -260,8 +262,8 @@ body.lb-locked{overflow:hidden}
 .svc-media{aspect-ratio:16/10;overflow:hidden;position:relative;background:#0d0d10}
 .svc-media img{width:100%;height:100%;object-fit:contain;filter:saturate(.86) brightness(.92)}
 .svc-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(9,9,11,.85) 100%)}
-.svc-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
-.svc-video-grid .svc-video{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;cursor:pointer;background:#0d0d10}
+.svc-video-grid{aspect-ratio:16/10;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+.svc-video-grid .svc-video{position:relative;display:block;overflow:hidden;cursor:pointer;background:#0d0d10}
 .svc-video-grid .svc-video .rc-frame{position:absolute;inset:0;background:#0d0d10;display:flex;align-items:center;justify-content:center}
 .svc-video-grid .svc-video img{max-width:100%;max-height:100%;width:100%;height:100%;object-fit:cover;transition:transform .45s,filter .45s}
 .svc-video-grid .svc-video:hover img{transform:scale(1.06)}
@@ -1057,5 +1059,3 @@ body.lb-locked{overflow:hidden}
   })();
 })();
 </script>
-
-</body></html>
