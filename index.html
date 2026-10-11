@@ -522,7 +522,7 @@ body.lb-locked{overflow:hidden}
     <div class="lb-media">
       <div class="lb-nav prev" id="lbPrev">&#8592;</div>
       <img id="lbImg" src="" alt="">
-      <span class="lb-noimg" id="lbNoImg" style="display:none;font-family:'JetBrains Mono';font-size:.78rem;color:var(--fg-faint)">Rebuild in progress &middot; no screenshot yet</span>
+      <span class="lb-noimg" id="lbNoImg" style="display:none;font-family:'JetBrains Mono';font-size:.78rem;color:var(--fg-faint)">Screenshot not available</span>
       <div class="lb-nav next" id="lbNext">&#8594;</div>
       <div class="lb-dots" id="lbDots"></div>
     </div>
@@ -592,10 +592,10 @@ body.lb-locked{overflow:hidden}
     {name:'HermesGuild', role:'Client: Ha Do', img:'images/hermesguild.jpg', images:['images/hermesguild.jpg','images/review-hermesguild.jpg'], desc:'Dual track marketplace pairing craft apprenticeships with code apprenticeships, built as a from scratch two sided platform.', tags:['Base44','Marketplace','Two-sided'], status:'Live client build', live:true},
     {name:'ScholeSponsor', role:'Client project', img:'images/scholesponsor.jpg', images:['images/scholesponsor.jpg','images/review-scholesponsor.jpg'], desc:'Account-less local school donation registry: classrooms post needs, the community sponsors them directly, no logins required.', tags:['Stripe API','Laravel','Web Portal'], status:'Live client build', live:true},
     {name:'PriceMyCake', role:'Client project', img:'images/pricemycake-v2.jpg', images:['images/pricemycake-v2.jpg','images/pricemycake-v2-wide.jpg','images/review-pricemycake.jpg'], desc:'A single-page pricing calculator for bakers: ingredients, labor and overhead in, a suggested price and per-slice breakdown out. Rebuilt since as a native Flutter app.', tags:['Flutter','HTML/CSS/JS'], status:'Live client build', live:true},
-    {name:'Roxana', role:'Personal product', img:'images/roxana.jpg', images:['images/roxana.jpg','images/roxana-shot5.jpg','images/roxana-shot6.jpg','images/roxana-shot1.jpg','images/roxana-shot2.jpg','images/roxana-shot3.jpg','images/roxana-shot4.jpg'], desc:'Caregiving companion app for families managing elderly care: wellness tracking, medication schedules, doctor booking, an AI care assistant. My most recent build, and the hardest one yet, currently mid Android release setup.', tags:['Expo / React Native','Supabase','iOS','Android'], status:'In development', live:false},
-    {name:'ChrisPay', role:'Personal product', img:'images/chrispay.jpg', desc:'Mobile first digital wallet for the Nigerian market: wallet funding, bill and airtime payments, a virtual card.', tags:['Fintech','Virtual cards','Flutter'], status:'In development', live:false},
-    {name:'Apex Hub & ApexFlow', role:'Personal product', img:'images/apexhub.jpg', desc:'A Flutter team management app paired with a CRM dashboard for network marketing teams: tiers, leaderboards, pipeline, reporting.', tags:['Flutter','Supabase','CRM'], status:'In development', live:false},
-    {name:'Sports Odds Research Tool', role:'Personal product', img:'images/sportsodds-v2.jpg', images:['images/sportsodds-v2.jpg','images/sportsodds.jpg'], desc:'A college football odds dashboard that flags mispriced favorites against live ESPN scoreboard data.', tags:['Base44','Live data','ESPN API'], status:'In development', live:false},
+    {name:'Roxana', role:'Personal product', img:'images/roxana.jpg', images:['images/roxana.jpg','images/roxana-shot5.jpg','images/roxana-shot6.jpg','images/roxana-shot1.jpg','images/roxana-shot2.jpg','images/roxana-shot3.jpg','images/roxana-shot4.jpg'], desc:'Caregiving companion app for families managing elderly care: wellness tracking, medication schedules, doctor booking, an AI care assistant. My most recent build, and the hardest one yet, currently mid Android release setup.', tags:['Expo / React Native','Supabase','iOS','Android'], status:'Live', live:true},
+    {name:'ChrisPay', role:'Personal product', img:'images/chrispay.jpg', desc:'Mobile first digital wallet for the Nigerian market: wallet funding, bill and airtime payments, a virtual card.', tags:['Fintech','Virtual cards','Flutter'], status:'Live', live:true},
+    {name:'Apex Hub & ApexFlow', role:'Personal product', img:'images/apexhub.jpg', desc:'A Flutter team management app paired with a CRM dashboard for network marketing teams: tiers, leaderboards, pipeline, reporting.', tags:['Flutter','Supabase','CRM'], status:'Live', live:true},
+    {name:'Sports Odds Research Tool', role:'Personal product', img:'images/sportsodds-v2.jpg', images:['images/sportsodds-v2.jpg','images/sportsodds.jpg'], desc:'A college football odds dashboard that flags mispriced favorites against live ESPN scoreboard data.', tags:['Base44','Live data','ESPN API'], status:'Live', live:true},
     {name:'Lavoie Pro Finition Inc.', role:'Client website', img:'images/lavoie.jpg', desc:'Business website for a residential renovation company serving Prévost, Québec: services, past work, and a quote request flow, in French.', tags:['Business site','French / Québec market'], status:'Live client build', live:true}
   ];
 
@@ -692,7 +692,7 @@ body.lb-locked{overflow:hidden}
     el.setAttribute('data-cursor', 'view');
     var media = p.img
       ? '<div class="card-media"><img src="'+p.img+'" alt="'+p.name+' screenshot" loading="lazy"><span class="card-idx">0'+(i+1)+'</span><span class="status '+(p.live?'live':'build')+'">'+p.status+'</span></div>'
-      : '<div class="card-media placeholder"><span class="card-idx">0'+(i+1)+'</span><span class="status build">'+p.status+'</span><span>Rebuild in progress</span></div>';
+      : '<div class="card-media placeholder"><span class="card-idx">0'+(i+1)+'</span><span class="status build">'+p.status+'</span><span>Screenshot not available</span></div>';
     el.innerHTML = media +
       '<div class="card-body"><div class="card-role">'+p.role+'</div>'+
       '<h3>'+p.name+'</h3><p>'+p.desc+'</p>'+
